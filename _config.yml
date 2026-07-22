@@ -2,10 +2,17 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: Prof. # the website title (if blank, full name will be used instead)
+title: Prof. Paul Halloran # the website title (if blank, full name will be used instead)
 first_name: Paul
 middle_name: R.
 last_name: Halloran
+position: Professor of Ocean & Climate Science
+affiliation: University of Exeter
+email: p.halloran@exeter.ac.uk
+# Academic profiles (icons appear on homepage automatically)
+scholar_userid: "26KhJdEAAAAJ"  # Found in your Google Scholar URL
+orcid_id: 0000-0002-9227-0678      # Your ORCID ID
+github_username: paulhalloran
 contact_note: >
   You can even add a little note about which of these is the best way to reach you.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
