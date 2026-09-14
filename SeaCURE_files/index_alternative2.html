@@ -155,65 +155,35 @@
             }
         }
 
-/* --- ENHANCED OCEAN WAVE & DEPTH GRADIENT --- */
+/* --- SUMMARY BOX WITH RISING BUBBLES --- */
 .summary-box {
     position: relative;
     overflow: hidden;
-    /* Gradient gives the subtle feel of deep ocean water */
-    background: linear-gradient(180deg, #2B6CB0 0%, #1A365D 100%);
+    background: linear-gradient(180deg, #2B6CB0 0%, #1A365D 100%); /* Deep ocean gradient */
     color: white;
-    padding: 45px 25px 25px 25px; /* Extra top padding for waves */
+    padding: 25px;
     margin: 20px 0;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* Front Wave Layer (Faster, crisp translucency) */
-.summary-box::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200%;
-    height: 28px;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0 C150,90 350,-40 500,40 C650,120 900,-20 1200,40 L1200,0 L0,0 Z" fill="rgba(255,255,255,0.22)"/></svg>');
-    background-size: 50% 100%;
-    animation: move-wave-front 8s linear infinite;
-    pointer-events: none;
-    z-index: 2;
+.summary-box h2 {
+    color: white;
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+    margin-top: 0;
 }
 
-/* Back Wave Layer (Slower, softer depth) */
-.summary-box::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200%;
-    height: 35px;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0 C200,60 400,-30 600,50 C800,110 1000,-10 1200,30 L1200,0 L0,0 Z" fill="rgba(255,255,255,0.12)"/></svg>');
-    background-size: 50% 100%;
-    animation: move-wave-back 13s linear infinite reverse;
-    pointer-events: none;
-    z-index: 1;
+.summary-box p, 
+.summary-box li {
+    color: #EBF8FF;
 }
 
-@keyframes move-wave-front {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
-
-@keyframes move-wave-back {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
-
-/* --- RISING BUBBLE ANIMATION --- */
+/* Bubble base style */
 .bubble {
     position: absolute;
     bottom: -30px;
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 50%;
     pointer-events: none;
     animation: float-up linear infinite;
@@ -221,30 +191,32 @@
 }
 
 /* Staggered size, horizontal positions, speeds, and delays */
-.b1 { width: 12px; height: 12px; left: 12%; animation-duration: 7s; animation-delay: 0s; }
-.b2 { width: 20px; height: 20px; left: 32%; animation-duration: 10s; animation-delay: 2.5s; }
-.b3 { width: 8px;  height: 8px;  left: 58%; animation-duration: 6s; animation-delay: 1s; }
-.b4 { width: 15px; height: 15px; left: 78%; animation-duration: 9s; animation-delay: 4s; }
-.b5 { width: 10px; height: 10px; left: 91%; animation-duration: 8s; animation-delay: 2s; }
+.b1 { width: 12px; height: 12px; left: 10%; animation-duration: 7s; animation-delay: 0s; }
+.b2 { width: 22px; height: 22px; left: 32%; animation-duration: 10s; animation-delay: 2.5s; }
+.b3 { width: 8px;  height: 8px;  left: 55%; animation-duration: 6s; animation-delay: 1s; }
+.b4 { width: 16px; height: 16px; left: 78%; animation-duration: 9s; animation-delay: 4s; }
+.b5 { width: 10px; height: 10px; left: 91%; animation-duration: 8s; animation-delay: 1.5s; }
 
+/* Rising animation with gentle side-to-side sway */
 @keyframes float-up {
     0% {
         transform: translateY(0) translateX(0);
         opacity: 0;
     }
     15% {
-        opacity: 0.8;
+        opacity: 0.85;
     }
     50% {
         transform: translateY(-160px) translateX(12px);
     }
     85% {
-        opacity: 0.8;
+        opacity: 0.85;
     }
     100% {
-        transform: translateY(-320px) translateX(-8px);
+        transform: translateY(-340px) translateX(-8px);
         opacity: 0;
     }
+}
 }
 
 </style>
@@ -260,6 +232,53 @@
         
         <h1>SeaCURE research in Weymouth - can the ocean help us tackle climate change?</h1>
 
+        <p style="color: #e53e3e; text-align: center; font-weight: bold;"><i class="fa-solid fa-mobile-screen"></i> Please view on a computer or tablet. This draft is not yet optimised for small screens.</p>
+    </header>
+
+    <main>
+        <!-- <div class="tab-container">
+            <button class="tab-button active" onclick="openTab(event, 'tab-context')"><i class="fa-solid fa-globe"></i> Context</button>
+            <button class="tab-button" onclick="openTab(event, 'tab-how')"><i class="fa-solid fa-gears"></i> How it Works</button>
+            <button class="tab-button" onclick="openTab(event, 'tab-seacure')"><i class="fa-solid fa-flask"></i> SeaCURE</button>
+            <button class="tab-button" onclick="openTab(event, 'tab-impacts')"><i class="fa-solid fa-fish"></i> Marine Life</button>
+            <button class="tab-button" onclick="openTab(event, 'tab-future')"><i class="fa-solid fa-arrow-right-long"></i> Next Steps</button>
+        </div> -->
+
+        <div class="tab-container">
+            <button class="tab-button active" onclick="openTab(event, 'tab-summary')"><i class="fa-regular fa-clock"></i> Summary</button>
+            <button class="tab-button" onclick="openTab(event, 'tab-context')"><i class="fa-solid fa-globe"></i> Context</button>
+            <button class="tab-button" onclick="openTab(event, 'tab-how')"><i class="fa-solid fa-gears"></i> How it Works</button>
+            <button class="tab-button" onclick="openTab(event, 'tab-seacure')"><i class="fa-solid fa-flask"></i> SeaCURE</button>
+            <button class="tab-button" onclick="openTab(event, 'tab-impacts')"><i class="fa-solid fa-fish"></i> Marine Life</button>
+            <button class="tab-button" onclick="openTab(event, 'tab-future')"><i class="fa-solid fa-arrow-right-long"></i> Next Steps</button>
+        </div>
+
+
+    <!-- NEW SUMMARY TAB CONTENT -->
+    <div id="tab-summary" class="tab-content active">
+        <div class="summary-box" style="margin: 0;">
+            <!-- Animated bubbles -->
+            <span class="bubble b1"></span>
+            <span class="bubble b2"></span>
+            <span class="bubble b3"></span>
+            <span class="bubble b4"></span>
+            <span class="bubble b5"></span>
+
+            <h2><i class="fa-regular fa-clock"></i> 1 minute summary</h2>
+            <p>To slow down climate change we must cut our use of fossil fuels as much as possible. This will reduce the build-up of carbon dioxide in the atmosphere. However, some activities are hard to make carbon-free, such as farming and flying. To balance out those activities we need to remove carbon dioxide from the air.</p>    
+            <p>We started looking at the ocean because it already absorbs large amounts of carbon dioxide from the atmosphere. We are exploring at ways to help the ocean take in even more by studying two approaches:</p>
+            <ul>
+                <li>Taking carbon dioxide out of seawater. This frees up space in the water so it can take in more carbon dioxide from the air.</li>
+                <li>Shifting the balance of the different forms of carbon in seawater, allowing the water to hold even more carbon dioxide.</li>
+            </ul>
+            <p>The SeaCURE pilot plant at SEA LIFE in Weymouth is the only not-for-profit facility in the world designed to study these approaches outside of a lab. We have been researching the first approach, and now we want to explore the second.</p>
+            <p>We only process a small amount of water to do these tests. We have checked that this is safe for sea life. We need more research at the site, still at small scales, to find out if the approaches would still be safe and effective if done around the world at much larger scales - where they could make a real difference to climate change.</p>
+            <p>This page explains what we have done, why we did it, how it works, and what we plan to do next. This information is here to support everyone in Weymouth to explore what the research could mean for them and to take part in conversations about the future of the research.</p>
+       </div>
+    </div>
+
+
+<!-- 
         <div class="summary-box">
             <h2><i class="fa-regular fa-clock"></i> 1 minute summary</h2>
             <p>To slow down climate change we must cut our use of fossil fuels as much as possible. This will reduce the build-up of carbon dioxide in the atmosphere. However, some activities are hard to make carbon-free, such as farming and flying. To balance out those activities we need to remove carbon dioxide from the air.</p>    
@@ -271,20 +290,9 @@
             <p>The SeaCURE pilot plant at SEA LIFE in Weymouth is the only not-for-profit facility in the world designed to study these approaches outside of a lab. We have been researching the first approach, and now we want to explore the second.</p>
             <p>We only process a small amount of water to do these tests. We have checked that this is safe for sea life. We need more research at the site, still at small scales, to find out if the approaches would still be safe and effective if done around the world at much larger scales - where they could make a real difference to climate change.</p>
             <p>This page explains what we have done, why we did it, how it works, and what we plan to do next. This information is here to support everyone in Weymouth to explore what the research could mean for them and to take part in conversations about the future of the research.</p>
-        </div>
-        <p style="color: #e53e3e; text-align: center; font-weight: bold;"><i class="fa-solid fa-mobile-screen"></i> Please view on a computer or tablet. This draft is not yet optimised for small screens.</p>
-    </header>
+        </div> -->
 
-    <main>
-        <div class="tab-container">
-            <button class="tab-button active" onclick="openTab(event, 'tab-context')"><i class="fa-solid fa-globe"></i> Context</button>
-            <button class="tab-button" onclick="openTab(event, 'tab-how')"><i class="fa-solid fa-gears"></i> How it Works</button>
-            <button class="tab-button" onclick="openTab(event, 'tab-seacure')"><i class="fa-solid fa-flask"></i> SeaCURE</button>
-            <button class="tab-button" onclick="openTab(event, 'tab-impacts')"><i class="fa-solid fa-fish"></i> Marine Life</button>
-            <button class="tab-button" onclick="openTab(event, 'tab-future')"><i class="fa-solid fa-arrow-right-long"></i> Next Steps</button>
-        </div>
-
-        <div id="tab-context" class="tab-content active">
+        <div id="tab-context" class="tab-content">
             <section>
                 <h2>Do we need to remove excess Carbon Dioxide from the atmosphere?</h2>
                 <div class="split-layout">
