@@ -155,6 +155,98 @@
             }
         }
 
+/* --- ENHANCED OCEAN WAVE & DEPTH GRADIENT --- */
+.summary-box {
+    position: relative;
+    overflow: hidden;
+    /* Gradient gives the subtle feel of deep ocean water */
+    background: linear-gradient(180deg, #2B6CB0 0%, #1A365D 100%);
+    color: white;
+    padding: 45px 25px 25px 25px; /* Extra top padding for waves */
+    margin: 20px 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Front Wave Layer (Faster, crisp translucency) */
+.summary-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 28px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0 C150,90 350,-40 500,40 C650,120 900,-20 1200,40 L1200,0 L0,0 Z" fill="rgba(255,255,255,0.22)"/></svg>');
+    background-size: 50% 100%;
+    animation: move-wave-front 8s linear infinite;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Back Wave Layer (Slower, softer depth) */
+.summary-box::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 35px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0 C200,60 400,-30 600,50 C800,110 1000,-10 1200,30 L1200,0 L0,0 Z" fill="rgba(255,255,255,0.12)"/></svg>');
+    background-size: 50% 100%;
+    animation: move-wave-back 13s linear infinite reverse;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes move-wave-front {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes move-wave-back {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* --- RISING BUBBLE ANIMATION --- */
+.bubble {
+    position: absolute;
+    bottom: -30px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: float-up linear infinite;
+    z-index: 1;
+}
+
+/* Staggered size, horizontal positions, speeds, and delays */
+.b1 { width: 12px; height: 12px; left: 12%; animation-duration: 7s; animation-delay: 0s; }
+.b2 { width: 20px; height: 20px; left: 32%; animation-duration: 10s; animation-delay: 2.5s; }
+.b3 { width: 8px;  height: 8px;  left: 58%; animation-duration: 6s; animation-delay: 1s; }
+.b4 { width: 15px; height: 15px; left: 78%; animation-duration: 9s; animation-delay: 4s; }
+.b5 { width: 10px; height: 10px; left: 91%; animation-duration: 8s; animation-delay: 2s; }
+
+@keyframes float-up {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+    }
+    15% {
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateY(-160px) translateX(12px);
+    }
+    85% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-320px) translateX(-8px);
+        opacity: 0;
+    }
+}
+
 </style>
 </head>
 <body>
@@ -170,15 +262,15 @@
 
         <div class="summary-box">
             <h2><i class="fa-regular fa-clock"></i> 1 minute summary</h2>
-            <p>To slow climate change, and to reduce the build up of acid in our oceans from carbon dioxide, we must cut our use of fossil fuels as much as we can. For the carbon dioxide we still release, we need to remove the same amount from the air to keep things in balance.</p>    
-            <p>The ocean already soaks up carbon dioxide on its own. We are looking at ways to help the ocean take in even more. We are studying two approaches:</p>
+            <p>To slow down climate change we must cut our use of fossil fuels as much as possible. This will reduce the build-up of carbon dioxide in the atmosphere. However, some activities are hard to make carbon-free, such as farming and flying. To balance out those activities we need to remove carbon dioxide from the air.</p>    
+            <p>We started looking at the ocean because it already absorbs large amounts of carbon dioxide from the atmosphere. We are exploring at ways to help the ocean take in even more by studying two approaches:</p>
             <ul>
-                <li>Take carbon dioxide out of seawater. This “empties” the water so it can take in more gas from the air.</li>
-                <li>Change the balance of types of carbon in seawater so the water can lock away more carbon dioxide than normal.</li>
+                <li>Taking carbon dioxide out of seawater. This frees up space in the water so it can take in more carbon dioxide from the air.</li>
+                <li>Shifting the balance of the different forms of carbon in seawater, allowing the water to hold even more carbon dioxide.</li>
             </ul>
-            <p>The SeaCURE pilot plant at SEA LIFE in Weymouth is the only not for profit site in the world that can study this outside of a lab. We have been testing the first idea and want to start looking at the second.</p>
-            <p>The amount of water we process is small, so it does not harm sea life. But we need more work at the site at small scale to find out if this would still be safe and effective at much larger scales, where it could make a real difference to climate change.</p>
-            <p>This page explains what we have done, why we did it, how it works, and what we plan to do next. We want to share clear information, but also give enough detail so people in the Weymouth area can understand the work and take part in informed conversations about the future of the research.</p>
+            <p>The SeaCURE pilot plant at SEA LIFE in Weymouth is the only not-for-profit facility in the world designed to study these approaches outside of a lab. We have been researching the first approach, and now we want to explore the second.</p>
+            <p>We only process a small amount of water to do these tests. We have checked that this is safe for sea life. We need more research at the site, still at small scales, to find out if the approaches would still be safe and effective if done around the world at much larger scales - where they could make a real difference to climate change.</p>
+            <p>This page explains what we have done, why we did it, how it works, and what we plan to do next. This information is here to support everyone in Weymouth to explore what the research could mean for them and to take part in conversations about the future of the research.</p>
         </div>
         <p style="color: #e53e3e; text-align: center; font-weight: bold;"><i class="fa-solid fa-mobile-screen"></i> Please view on a computer or tablet. This draft is not yet optimised for small screens.</p>
     </header>
@@ -219,7 +311,7 @@
                     </div>
                     <div>
                         <p>The ocean acts like a sponge, absorbing a large share of human-made CO<sub>2</sub>. If you compare the same volume of seawater and air, the seawater contains over 100 times more carbon.</p>
-                        <p>Capturing carbon from seawater, or increasing the capacity of the water to hold carbon, could therefore be more practical than <a href="https://climeworks.com/plant-orca" target="_blank" style="color:var(--interactive-color);">capturing carbon from air</a>.</p>
+                        <p>Capturing carbon from seawater, or increasing the capacity of the water to hold carbon, could therefore be more practical than <a href="https://climeworks.com/direct-air-capture" target="_blank" style="color:var(--interactive-color);">capturing carbon from air</a>.</p>
                         <p>Removing CO<sub>2</sub> this way would also <span class="interactive-trigger" data-modal="modal-html_page_compete_for_land">minimise competition for space on land</span>, which limits how much carbon we can remove from the atmosphere by approaches like tree planting.</p>
                     </div>
                 </div>
