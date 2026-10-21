@@ -50,8 +50,31 @@
         .graphic-placeholder2 i { font-size: 3rem; margin-bottom: 10px; color: #CBD5E0; }
 
         /* VISUAL CARDS FOR LISTS */
-        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; }
-        .info-card { background: #F7FAFC; border-left: 5px solid var(--accent-color); padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        /* .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; } */
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        /* .info-card { background: #F7FAFC; border-left: 5px solid var(--accent-color); padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); } */
+        .info-card { 
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Keeps text at top, image at bottom */
+            background: #F7FAFC; 
+            border-left: 5px solid var(--accent-color); 
+            padding: 20px; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
+            box-sizing: border-box;
+        }
+        .info-card img {
+            max-width: 100%;
+            height: auto;
+            display: block; /* Removes inline bottom spacing gap */
+            margin-top: 15px; /* Ensures gap between text and image */
+        }
         .info-card strong { color: var(--title-color); display: block; margin-bottom: 10px; font-size: 1.1rem; }
 
         .interactive-trigger { color: var(--interactive-color); border-bottom: 2px dotted var(--accent-color); cursor: pointer; font-weight: 600; }
@@ -302,6 +325,7 @@
         </div> -->
 
         <div id="tab-context" class="tab-content">
+
             <section>
                 <h2>Do we need to remove excess Carbon Dioxide from the atmosphere?</h2>
                 <div class="split-layout">
@@ -315,9 +339,7 @@
                     </div>
                 </div>
             </section>
-        </div>
 
-        <div id="tab-how" class="tab-content">
             <section>
                 <h2>Why the ocean?</h2>
                 <div class="split-layout2">
@@ -333,18 +355,43 @@
                     </div>
                 </div>
             </section>
-            <section>
+
+
+        </div>
+
+        <div id="tab-how" class="tab-content">
+             <section>
                 <h2>How can seawater help remove CO<sub>2</sub> from the atmosphere?</h2>
                 <p>The CO<sub>2</sub> that humans produce will eventually be absorbed by the ocean, but this natural process of carbon dioxide removal takes tens of thousands of years. We can speed things up in two different ways. If we think of the ocean as a sponge for CO<sub>2</sub>, we can:</p>
                 
-                <div class="card-grid" style="margin-bottom: 20px;">
+                <!-- <div class="card-grid" style="margin-bottom: 20px;">
                     <div class="info-card">
                         <strong>Approach 1: 'squeeze out the sponge'</strong>
                         Take carbon out of seawater, so it can refill with CO<sub>2</sub> from the atmosphere. This is known as Direct Ocean Carbon Capture.
+                        <img src="images/carbon_sponge_part2a.png" alt="The ocean as a sponge for carbon" class="crop-img complex-layer" style="object-fit: contain;">
                     </div>
                     <div class="info-card">
                         <strong>Approach 2: 'make the sponge  more absorbent'</strong>
                         Increase the capacity of seawater to hold carbon. This is known as Ocean Alkalinity Enhancement.
+                        <img src="images/carbon_sponge_part2b.png" alt="The ocean as a sponge for carbon" class="crop-img complex-layer" style="object-fit: contain;">
+                    </div>
+                </div> -->
+
+                <div class="card-grid" style="margin-bottom: 20px;">
+                    <div class="info-card">
+                        <div>
+                            <strong>Approach 1: 'squeeze out the sponge'</strong><br>
+                            Take carbon out of seawater, so it can refill with CO<sub>2</sub> from the atmosphere. This is known as Direct Ocean Carbon Capture.
+                        </div>
+                        <img src="images/carbon_sponge_part2a.png" alt="The ocean as a sponge for carbon" class="crop-img complex-layer" style="object-fit: contain;">
+                    </div>
+
+                    <div class="info-card">
+                        <div>
+                            <strong>Approach 2: 'make the sponge more absorbent'</strong><br>
+                            Increase the capacity of seawater to hold carbon. This is known as Ocean Alkalinity Enhancement.
+                        </div>
+                        <img src="images/carbon_sponge_part2b.png" alt="The ocean as a sponge for carbon" class="crop-img complex-layer" style="object-fit: contain;">
                     </div>
                 </div>
 
@@ -352,16 +399,16 @@
                     <img src="images/DOCC_OAE_super_simple2.png" alt="Detailed process" class="crop-img complex-layer">
                     <img src="images/DOCC_OAE_super_simple.png" alt="Carbon removal process" class="crop-img simple-layer">
                 </div>  -->
-                <div class="graphic-placeholder2">
+                <!-- <div class="graphic-placeholder2">
                     <img src="images/carbon_sponge_part2.png" alt="Removal explained as a sponge" class="fit-frame">
-                </div> 
+                </div>  -->
                 <p>Biological carbon dioxide removal approaches like farming seaweed sound promising, but the ocean can only support a certain amount of growth because nutrients are limited. Growing more plants in one place can reduce growth elsewhere and may harm biodiversity. So SeaCURE focuses on engineered methods, which we believe are safer and easier to scale.</p>
             </section>
 
             <section>
                 <h2>How do these processes work?</h2>
                 <div class="graphic-placeholder2">
-                    <img src="images/Process_graphic_Designer.png" alt="Removal explained as a sponge" class="fit-frame">
+                    <img src="images/Process_graphic_Designer_light.png" alt="Removal explained as a sponge" class="fit-frame">
                 </div> 
             </section>
 
@@ -387,17 +434,42 @@
                     </div>
                 </div>
 
-                <h3>What have we done so far?</h3>
-                <p>Over a two-month trial, we showed that the system could remove CO<sub>2</sub> from seawater using Approach 1. We also studied:</p>
-                <div class="card-grid">
-                    <div class="info-card">Potential marine impacts and how to safeguard the marine environment.</div>
-                    <div class="info-card">How to prove CO<sub>2</sub> is actually removed from the air.</div>
-                    <div class="info-card">Likely energy use and costs.</div>
-                    <div class="info-card">What large-scale operation might look like, and what barriers would need to be overcome.</div>
+                <div>
+                    <h3>What have we done so far?</h3>
+                    <p>Over a two-month trial, we showed that the system could remove CO<sub>2</sub> from seawater using Approach 1. We also studied:</p>
+                    <div class="card-grid">
+                        <div class="info-card">Potential marine impacts and how to safeguard the marine environment.</div>
+                        <div class="info-card">How to prove CO<sub>2</sub> is actually removed from the air.</div>
+                        <div class="info-card">Likely energy use and costs.</div>
+                        <div class="info-card">What large-scale operation might look like, and what barriers would need to be overcome.</div>
+                    </div>
+                    <p></p>
+                    <p style="margin-top: 20px;"><span class="interactive-trigger" data-modal="modal-reveal-presentation-what-has-seacure-done">To learn more about what the SeaCURE project has done so far click here</span>.</p>
+                    <p></p>
                 </div>
-                <p style="margin-top: 20px;"><span class="interactive-trigger" data-modal="modal-reveal-presentation-what-has-seacure-done">To learn more about what the SeaCURE project has done so far click here</span>.</p>
-                <p>The project has been led and run by the <a href="https://www.exeter.ac.uk" target="_blank" style="color:var(--interactive-color);">University of Exeter</a>, with the <a href="https://pml.ac.uk" target="_blank" style="color:var(--interactive-color);">Plymouth Marine Laboratory</a>, <a href="https://www.brunel.ac.uk" target="_blank" style="color:var(--interactive-color);">Brunel University of London</a> and <a href="https://www.eliquohydrok.co.uk" target="_blank" style="color:var(--interactive-color);">Eliquo Hydrok</a>.</p>
+
+
+                <div class="split-layout">      
+                    <!-- <div class="graphic-placeholder2"> -->
+                    <div>
+                        <h3>Team</h3>
+                        <p>The project has been led and run by the <a href="https://www.exeter.ac.uk" target="_blank" style="color:var(--interactive-color);">University of Exeter</a>, with the <a href="https://pml.ac.uk" target="_blank" style="color:var(--interactive-color);">Plymouth Marine Laboratory</a>, <a href="https://www.brunel.ac.uk" target="_blank" style="color:var(--interactive-color);">Brunel University of London</a> and <a href="https://www.eliquohydrok.co.uk" target="_blank" style="color:var(--interactive-color);">Eliquo Hydrok</a>.</p>
+                        <p>We have different teams coming together to work on different problems. Paul Halloran at the University of Exeter is leading the overarching activity to coordinate this.</p>
+                    </div>  
+                    <div>
+                        <img src="images/SeaCURETeam.jpg" alt="The SeaCURE Team members involved in the project." class="standard-image">
+                    </div>
+                </div>
+   
+                <div>
+                    <h2>Who is funding this?</h2>      
+                    <p>The first project was funded by the UK Government's Greenhouse Gas Removal Innovation Programme (2021–2025).</p>
+                    <p>Since May 2025, support has come from the University of Exeter and the <a href="https://www.carbontosea.org" target="_blank" style="color:var(--interactive-color);">Carbon to Sea Initiative</a>, a non-profit funding ocean carbon removal research globally. Carbon to Sea have funded workshops to understand the interest and thoughts of the local community.</p>
+                    <p>Local community views will help guide future funding applications aiming to make Weymouth a global research hub.</p> 
+                </div>
+
             </section>
+
         </div>
 
         <div id="tab-impacts" class="tab-content">
@@ -433,7 +505,7 @@
                     </div>
                     <div class="info-card">
                         <strong>2. Demonstrate Removal</strong>
-                        <p class="bullet-details" style="margin: 0; font-size: 0.95rem;">Demonstrate in the real ocean that removing CO<sub>2</sub> from seawater leads to CO<sub>2</sub> being removed from the air. This is important for understanding how well Approach 1 could help the climate if used at large scales. Researchers can investigate this by tracking where the released water flows, while using measurements and computer predictions to see how it changes.</p>
+                        <p class="bullet-details" style="margin: 0; font-size: 0.95rem;">While our understaning and models tell us that lowering the CO<sub>2</sub> concentration in seawater results in a predictable amount of CO<sub>2</sub> being removed from the atmosphere, we need to show exactly how this occurs in reality. This can be investigated by tracking where the released water flows, and measuring how it changes.</p>
                     </div>
                     <div class="info-card">
                         <strong>3. Broaden Research</strong>
@@ -453,13 +525,6 @@
                     <li>The <a href="https://oaesis.eu" target="_blank">OAeSIS</a> project has been funded by the EU to evaluate the sustainability, effectiveness, and impacts of Ocean Alkalinity Enhancement (Approach 2). The project will improve our computer model of Weymouth Bay with additional measurements of the Bay's seawater chemistry and currents through fieldwork in 2027/28.</li>
                  </ul>
             </section> 
-
-            <section>
-                <h2>Who is funding this?</h2>      
-                <p>The first project was funded by the UK Government's Greenhouse Gas Removal Innovation Programme (2021–2025).</p>
-                <p>Since May 2025, support has come from the University of Exeter and the <a href="https://www.carbontosea.org" target="_blank" style="color:var(--interactive-color);">Carbon to Sea Initiative</a>, a non-profit funding ocean carbon removal research globally. Carbon to Sea have funded workshops to understand the interest and thoughts of the local community.</p>
-                <p>Local community views will help guide future funding applications aiming to make Weymouth a global research hub.</p> 
-            </section>
 
             <section>
                 <h2>Conclusion</h2>      
