@@ -10,6 +10,6 @@ related_publications: false
 
 Led by Halloran and funded by the Carbon to Sea Initiative, this project is working with Sense About Science and PML to engage and co-create a description of the research with the community and wider stakeholders around the SeaCURE pilot plant site in Weymouth.
 
-[Co-created research description (live)](https://paulhalloran.github.io/SeaCURE_files/index.html){:target="_blank"}
+[Co-created research description (live)](https://seacure.github.io/){:target="_blank"}
 
 ![co-creation process]({{ '/assets/img/cocreation_process.png' | relative_url }}){: style="width: 80vw; max-width: 100%; height: auto;" }
