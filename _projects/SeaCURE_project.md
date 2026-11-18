@@ -12,7 +12,7 @@ SeaCURE has developed and demonstrated the components of a marine-based Carbon D
 
 Led by Halloran at the University of Exeter, SeaCURE is a collaboration between world leading academic experts (in ocean carbon and climate monitoring and modelling, green infrastructure (Exeter, PML, and Brunel University of London), life cycle analysis (Exeter) and engineering and technology-focused SMEs with expertise in carbon removal, water processing and plant design and build (Eliquo Hydrok).
 
+<!-- prettier-ignore -->
 [Download Final Report](https://assets.publishing.service.gov.uk/media/695cf4ccb5c46330350ed991/SeaCURE-final-report.pdf){:target="_blank"}
 
 ![co-creation process]({{ '/assets/img/seacure_process.png' | relative_url }}){: style="width: 80vw; max-width: 100%; height: auto;" }
-

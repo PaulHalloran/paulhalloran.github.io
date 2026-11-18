@@ -12,5 +12,5 @@ COMFORT focused on knowledge gaps for key ocean tipping elements within the Eart
 
 Halloran contributed to the detection of tipping points, leading the PhD study undertaken by Beatriz Arello Nava.
 
+<!-- prettier-ignore -->
 [Project web page](https://comfort.w.uib.no){:target="_blank"}
-

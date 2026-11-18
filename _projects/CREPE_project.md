@@ -2,7 +2,7 @@
 layout: page
 title: CREPE
 description: "Carbon Removal: Efficient Pre-treatment for Electrochemistry"
-img: assets/img/CREPE_one_slide.jpg 
+img: assets/img/CREPE_one_slide.jpg
 importance: 2
 category: work
 giscus_comments: false

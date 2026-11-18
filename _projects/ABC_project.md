@@ -18,5 +18,3 @@ In ABC fluxes we will address these issues by deploying new chemical sensors and
 We will interpret our direct flux calculations as contributions to the North Atlantic budget in conjunction with other observations and models, to assess how oceanic fluxes control the strength and variability of the role the North Atlantic plays in the global carbon cycle.
 
 ABC is a collaboration between the National Oceanography Centre (NOC), University of Exeter's Department of Geography, University of Southampton's School of Ocean and Earth Science, and Plymouth Marine Laboratory (PML).
-
-

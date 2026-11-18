@@ -7,6 +7,7 @@ importance: 6
 category: work
 related_publications: false
 ---
+
 When we emit carbon dioxide (CO2) to the atmosphere through industrial activity, only around half of that CO2 remains in the atmosphere, with the remainder being taken up approximately equally through photosynthesis by plants on land and being absorbed by the oceans. These anthropogenic CO2 'sinks' are essentially saving us from a large part of the global warming that we would otherwise be experiencing. New evidence suggests that our estimates of how this fraction of CO2 that stays in the atmosphere is changing, and will continue to change, may be too high, meaning that there may be more hope that we can prevent atmospheric CO2 concentrations rising too high than was previously thought.
 
 Whilst we can estimate how much CO2 we are presently emitting, and can measure the concentration of CO2 in the atmosphere, and therefore work out how strong these sinks are (i.e. how much CO2 they are taking out of the atmosphere), we must calculate how this number will change in the future if we are to determine how much CO2 we can emit as a society without exceeding dangerous CO2 concentrations in the atmosphere. This project aims to give us a better understanding of what this future change in the fraction of CO2 staying in the atmosphere is, by correcting a bias we have identified in the models we use to make these projections.
@@ -18,4 +19,3 @@ One we have our improved estimates of future changes in the strength of the ocea
 The overarching aim of this project is to provide UK and international governments with the best possible impartial information from which they can plan how best to work towards the global warming targets (the 'Paris Agreement') set at the Paris Climate Conference in December 2015.
 
 CURB CO2 was a one year NERC-BEIS funded project.
-
